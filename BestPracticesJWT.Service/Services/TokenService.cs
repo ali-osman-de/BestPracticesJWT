@@ -12,7 +12,7 @@ using System.Security.Cryptography;
 
 namespace BestPracticesJWT.Service.Services;
 
-public class TokenService : ITokenService
+internal class TokenService : ITokenService
 {
     private readonly UserManager<AppUser> _userManager;
     private readonly CustomTokenOption _customTokenOption;
@@ -36,8 +36,7 @@ public class TokenService : ITokenService
         {
             new Claim(ClaimTypes.NameIdentifier, appUser.Id),
             new Claim(JwtRegisteredClaimNames.Email, appUser.Email),
-            new Claim(ClaimTypes.GivenName, appUser.FullName),
-            new Claim(ClaimTypes.Name, appUser.FirstName),
+            new Claim(ClaimTypes.Name, appUser.UserName),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
 
