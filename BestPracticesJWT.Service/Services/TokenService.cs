@@ -3,6 +3,7 @@ using BestPracticesJWT.Core.Entities;
 using BestPracticesJWT.Core.Interfaces.Services;
 using BestPracticesJWT.SharedCommons.Configuration;
 using BestPracticesJWT.SharedCommons.Dtos;
+using BestPracticesJWT.SharedCommons.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -47,8 +48,9 @@ internal class TokenService : ITokenService
     private IEnumerable<Claim> GetClaimsByClient(Client client)
     {
         var claims = new List<Claim>();
+
         claims.AddRange(client.Audience.Select(x => new Claim(JwtRegisteredClaimNames.Aud, x)));
-        
+
         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString());
         new Claim(JwtRegisteredClaimNames.Sub, client.Id.ToString());
         

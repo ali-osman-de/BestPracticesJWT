@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "Multiple Start Project",
+    "Projects": [
+      {
+        "Path": "BestPracticesJWT.API\\BestPracticesJWT.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "MiniApp1.API\\MiniApp1.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "MiniApp2.API\\MiniApp2.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "MiniApp3.API\\MiniApp3.API.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

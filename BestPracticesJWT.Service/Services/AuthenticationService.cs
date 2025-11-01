@@ -19,13 +19,13 @@ public class AuthenticationService : IAuthenticationService
     private readonly IUnitOfWork _unitOfWork;
     private readonly IGenericRepository<UserRefreshToken> _userRefreshTokenService;
 
-    public AuthenticationService(IOptions<List<Client>> client, 
+    public AuthenticationService(IOptions<List<Client>> clientOptions, 
                                  ITokenService tokenService, 
                                  UserManager<AppUser> userManager, 
                                  IUnitOfWork unitOfWork, 
                                  IGenericRepository<UserRefreshToken> userRefreshTokenService)
     {
-        _client = client.Value;
+        _client = clientOptions.Value;
         _tokenService = tokenService;
         _userManager = userManager;
         _unitOfWork = unitOfWork;

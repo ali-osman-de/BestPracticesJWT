@@ -1,7 +1,7 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace BestPracticesJWT.Service.Services;
+namespace BestPracticesJWT.SharedCommons.Services;
 
 public static class SignService
 {
